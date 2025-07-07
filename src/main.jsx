@@ -17,7 +17,9 @@ const router = createBrowserRouter([
   {
     path: '*', element: <NotFoundPage />
   }
-]);
+], {
+  basename: '/my-boutique/'
+});
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

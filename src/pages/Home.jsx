@@ -7,7 +7,7 @@ import CardProduct from "../components/CardProduct";
 function Home() {
     return (
         <div className="relative">
-            <Link className="w-full h-[85vh] md:h-screen relative flex">
+            <Link className="w-full h-[70vh] md:h-screen relative flex">
                 <img src="https://assets.vogue.com/photos/64da326993ebb91b83375c32/master/w_2560%2Cc_limit/00-story%2520(41).jpg" 
                 className="w-full h-full object-cover"
                 alt="" />
@@ -26,7 +26,7 @@ function Home() {
                     <Link>Instagram<FontAwesomeIcon icon={faArrowRight} className="ml-2 text-xs" /></Link>
                 </div>
             </Link>
-            <div className="w-full h-fit px-2 md:px-6 py-4 md:py-6 lg:p-10 flex items-center justify-center">
+            <div className="w-full h-fit px-2 md:px-6 py-6 lg:p-10 flex items-center justify-center">
                 <div className="w-full h-full flex flex-col gap-2 md:gap-6 lg:gap-8">
                     <div className="w-full px-2 md:px-0 h-10">
                         <h2 className="text-xl md:text-3xl">New Release</h2>
