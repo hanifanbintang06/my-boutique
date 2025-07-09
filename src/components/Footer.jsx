@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <div className="w-full h-fit p-4 md:p-6 lg:p-10 flex flex-col border-t border-gray-400">
+        <div className="w-full h-fit p-4 md:p-6 lg:p-10 flex flex-col border-t border-gray-400 z-100">
             <div className="w-full h-fit grid grid-cols-1 md:grid-cols-4">
                 <div className="w-full h-fit flex flex-col text-left gap-4">
                     <div className="w-full h-fit">
