@@ -7,6 +7,7 @@ import TableSize from "../components/TableSize";
 import gsap from "gsap";
 import ButtonCom from "../components/ButtonCom";
 import CardCom from "../components/CardCom";
+import CardProduct from "../components/CardProduct";
 
 function DetailProduct() {
     const [ openDesc, setOpenDesc ] = useState(false);
@@ -179,7 +180,7 @@ function DetailProduct() {
                     </div>
                 </div>
                 <div className="relative w-full md:w-2/5 h-fit md:h-auto md:pt-16 md:pt-20 flex flex-col">
-                    <div className="bg-[#fafafa] w-full h-fit px-4 md:px-6 py-6 lg:py-10 flex flex-col gap-4">
+                    <div className="bg-[#fafafa] w-full h-fit px-4 md:px-6 py-6 lg:p-10 flex flex-col gap-4">
                         <div className="w-full h-fit flex flex-row justify-between items-center">
                             <div className="w-full h-fit flex flex-row gap-4">
                                 <Link className="py-1 px-4 bg-[#21242a] border border-black text-white text-[10px] md:text-sm">Kemeja</Link>
@@ -217,7 +218,7 @@ function DetailProduct() {
                             </div>
                             <button onClick={handleDesc} className="cursor-pointer">{openDesc ? `Lihat lebih sedikit` : `Lihat lebih banyak`}</button>
                         </div>
-                        <div className="w-full h-fit flex flex-col gap-2">
+                        <div className={`w-full h-fit flex flex-col gap-2 ${openSize ? `` : `border-b`} py-2`}>
                             <button onClick={handleSize} className="w-full h-fit py-2 flex justify-between text-xs md:text-base items-center cursor-pointer">
                                 <p>Tabel ukuran</p>
                                 <FontAwesomeIcon icon={faChevronDown} className="text-[10px] md:text-sm"/>
@@ -231,7 +232,7 @@ function DetailProduct() {
                                 </div>
                             )}
                         </div>
-                        <div className="w-full h-fit flex flex-col gap-2">
+                        <div className={`w-full h-fit flex flex-col gap-2 ${openCare ? `` : `border-b`} py-2`}>
                             <button onClick={handleCare} className="w-full h-fit py-2 flex justify-between text-xs md:text-base items-center cursor-pointer">
                                 <p>Perawatan</p>
                                 <FontAwesomeIcon icon={faChevronDown} className="text-[10px] md:text-sm"/>
@@ -242,13 +243,47 @@ function DetailProduct() {
                                 </div>
                             )}
                         </div>
-                        <button onClick={handleCom} className="w-full h-fit flex flex-row py-2 gap-4 items-center justify-between text-xs md:text-base cursor-pointer">
+                        <button onClick={handleCom} className={`w-full h-fit flex flex-row py-4 gap-4 items-center border-b
+                        justify-between text-xs md:text-base cursor-pointer`}>
                             <h2>Ulasan</h2>
                             <FontAwesomeIcon icon={faArrowRight} className="text-[10px] md:text-sm"/>
                         </button>
-                        <div className="w-full h-fit flex flex-col gap-4 text-justify text-xs md:text-base">
+                        <div className="w-full h-fit flex flex-col gap-4 py-2 text-justify text-xs md:text-base">
                             <h2>Pengiriman</h2>
                             <p>duhwau ghuagh dwuagh duwgau fgu gaufgwagaguwa waf a gfuag fuwagf uagfug fuga fuagf auwuf g</p>
+                        </div>
+                    </div>
+                    <div className="w-full h-full relative px-2 md:px-6 lg:px-10">
+                        <div className="w-full h-[60vh] md:h-[80vh] sticky top-18">
+                            <div className="w-full h-full relative">
+                                <img src="https://assets.vogue.com/photos/65142454768a0201fd6908ae/master/w_1600,c_limit/download%20(3).jpeg" 
+                                className="w-full h-full object-cover" alt="" />
+                                <div className="absolute inset-0 bg-black/40"></div>
+                                <div className="absolute w-full h-34 bottom-4 md:bottom-6 flex justify-center text-white">
+                                    <div className="w-46 md:w-3xs h-full flex flex-col gap-2">
+                                        <h2 className="text-base md:text-2xl font-medium text-center line-clamp-3">Lihat produk lainnya dari koleksi</h2>
+                                        <Link className="w-full h-fit border border-white py-2 flex justify-center text-xs md:text-base
+                                        hover:bg-[#fafafa] hover:text-black transition-all duration-300">
+                                            Lihat koleksi
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full h-fit px-2 md:px-6 py-6 lg:p-10 flex flex-col md:gap-8">
+                <div className="w-full h-full flex flex-col gap-2 md:gap-6 lg:gap-8">
+                    <div className="w-full h-10 flex justify-left">
+                        <h2 className="text-xl md:text-3xl">Produk serupa</h2>
+                    </div>
+                    <div className="w-full h-fit flex flex-col gap-2">
+                        <div className="w-full h-fit grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <CardProduct />
+                            <CardProduct />
+                            <CardProduct />
+                            <CardProduct />
                         </div>
                     </div>
                 </div>
@@ -264,7 +299,7 @@ function DetailProduct() {
                     <div className={`w-full h-full bg-[#fafafa] flex flex-col gap-4 px-10 pt-16 pb-10 items-start border-l border-gray-400`}>
                         <h2 className="text-lg md:text-2xl">Ulasan</h2>
                         <p className="text-xs md:text-base">Filter</p>
-                        <div className="w-full h-10 md:h-12 flex flex-row gap-2 overflow-x-auto">
+                        <div className="w-full h-10 md:h-18 flex flex-row gap-2 overflow-x-auto">
                             <ButtonCom />
                             <ButtonCom />
                             <ButtonCom />

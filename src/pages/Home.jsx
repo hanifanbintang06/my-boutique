@@ -30,7 +30,7 @@ function Home() {
                     gsap.fromTo(
                         fade, 
                         { opacity: 0 },
-                        { opacity: 1, duration: 0.2, delay: 1, ease: "none" }
+                        { opacity: 1, duration: 0.2, delay: 0.6, ease: "none" }
                     )
                     observer.unobserve(fade);
                 };
@@ -63,7 +63,14 @@ function Home() {
                     </div>
                 </div>
             </Link>
-            <Display />
+            <div className="w-full h-fit px-2 md:px-6 py-6 lg:p-10 flex items-center justify-center">
+                <div className="w-full h-full flex flex-col gap-2 md:gap-6 lg:gap-8">
+                    <div className="w-full px-2 md:px-0 h-10">
+                        <h2 className="text-xl md:text-3xl">New Release</h2>
+                    </div>
+                    <Display />
+                </div>
+            </div>
             <div className="w-full h-fit px-2 md:px-6 py-6 lg:p-10 flex items-center justify-center">
                 <div className="w-full h-full flex flex-col gap-2 md:gap-6 lg:gap-8">
                     <div className="w-full h-10 flex justify-center">
@@ -91,7 +98,7 @@ function Home() {
                 alt="" />
                 <div className="absolute inset-0 bg-black/40 z-5"></div>
                 <div ref={newCol} className="absolute w-full h-[70vh] md:h-screen p-6 lg:p-10 flex items-end justify-center z-10">
-                    <div className="w-2xs md:w-sm h-64 flex flex-col items-center justify-end text-white gap-2">
+                    <div ref={newCol} className="w-2xs md:w-sm h-64 flex flex-col items-center justify-end text-white gap-2">
                         <div className="w-full h-fit flex justify-center text-lg md:text-2xl font-medium px-2">
                             <h2 className="w-fit max-w-full line-clamp-2 text-center">Batik khas semudeng tema corak parang floral yang memukau</h2>
                         </div>

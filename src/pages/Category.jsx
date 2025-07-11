@@ -19,7 +19,7 @@ function Category() {
                     </div>
                 </div>
             </div>
-            <div className="relative flex flex-col">
+            <div className="w-full h-fit px-2 md:px-6 py-6 lg:p-10 gap-8 lg:gap-10 flex flex-col items-center justify-center">
                 <Display />
                 <Display />
                 <Display />
